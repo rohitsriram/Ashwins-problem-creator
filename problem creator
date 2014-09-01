@@ -1,0 +1,80 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class ashwinsproblems {
+	
+	
+
+	public static void main(String[] args) {
+		String reply = "yes";
+		int points = 0;
+		int count = 0;
+		String [] statements = {
+				"You must be the smartest person in the universe",
+				"Great job you are a genius!",
+				"You are smarter than Einstein!",
+				"How did you that that. You are amazing!",
+				"You are the master at multiplication"
+				};
+			while( reply.equals("yes")){
+				 Random firstGenerator = new Random();
+				 
+				 int firstNumber = firstGenerator.nextInt(100);
+
+				 Random secondGenerator = new Random();
+				 
+				 int secondNumber =secondGenerator.nextInt(100);
+
+				  int answer = firstNumber*secondNumber; 
+				  
+				  System.out.println(firstNumber + " X " +secondNumber);
+				  
+				 
+				  
+				 //creates the problem and prints it out for the viewer to see
+
+				 
+
+				  
+				  Random random = new Random();
+					int randomNumber = random.nextInt(4);
+				 
+
+				 
+				  //put try block here
+				  try {
+					  Scanner input = new Scanner(System.in);
+					  
+					  System.out.println("What is your answer?");
+
+					 int result = input.nextInt();
+					 //reads the answer given, and adds it to the result variable
+					
+					   if(result==answer){
+				    	   System.out.println(statements[randomNumber]);
+				    	points += 100;
+				    	System.out.println("You have " + points + " points");
+				    	count++;
+				    	System.out.println("You have completed " + count + " problems");
+				    	
+				       }
+					   //checks if the problem is correct
+					   //if it is correct, then it adds 100 points for the user
+				       else{
+				    	   System.out.println("Too bad, try again.");
+				    	   System.out.println("The answer was "+ answer);
+				    	   count++;
+				    	   System.out.println("You have completed " + count + " problems");
+				    	   
+				       }
+					   //if answer is wrong then tells user the answer
+				    } catch (Exception ex) {
+				       
+				       System.out.println("Sorry, you did not enter a number. Please enter a number.");                          
+				    }		    
+					
+			}
+			
+		}
+				
+	}
